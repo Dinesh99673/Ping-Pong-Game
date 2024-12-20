@@ -16,9 +16,11 @@ class Ball(Turtle):
         new_y = self.ycor() + self.y_move
         self.goto((new_x,new_y))
 
+    #To bouunce the Ball by the walls (only up and down wall)
     def bouncedByWall(self):
         self.y_move *= -1
 
+    #To Bounce the Ball by the Paddle and to increase the speed of the ball at every Bounce for Difficulty
     def bouncedByPaddle(self):
         self.move_speed *= 0.9
         self.x_move *= -1
