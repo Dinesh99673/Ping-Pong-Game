@@ -4,6 +4,7 @@ import paddle
 import ball
 import scoreBoard
 
+#Screen Configuration
 screen = Screen()
 screen.setup(width=800,height=600)
 screen.bgcolor("black")
@@ -37,11 +38,12 @@ while game_is_on:
     if (ball.distance(r_paddle.position()) < 50 and ball.xcor() > 340) or (ball.distance(l_paddle.position()) < 50 and ball.xcor() < -340):
         ball.bouncedByPaddle()
 
-
+    #To detect if right Paddle missed the ball or not
     if ball.xcor() > 390:
         ball.reset_position()
         l_scoreBoard.increase()
 
+    #To detect if left Paddle missed the ball or not
     if ball.xcor() < -390:
         ball.reset_position()
         r_scoreBoard.increase()
